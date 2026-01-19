@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLTC - Thalang Technical College Alumni Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700;800&family=Montserrat:wght@900&display=swap');
+      
+      :root {
+        --brown: #795548;
+        --gold: #d4af37;
+      }
+      
+      body {
+        font-family: 'Sarabun', sans-serif;
+        background-color: #fdfbf9;
+        overflow-x: hidden;
+      }
+      
+      h1, h2, h3, button, .font-black {
+        font-family: 'Montserrat', 'Sarabun', sans-serif;
+      }
+      
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fadeIn {
+        animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .gov-card {
+        background: white;
+        border: 1px solid rgba(121, 85, 72, 0.05);
+        border-radius: 3rem;
+        box-shadow: 0 20px 50px -10px rgba(121, 85, 72, 0.08);
+        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      
+      .gov-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 60px 100px -20px rgba(121, 85, 72, 0.15);
+      }
+      
+      .border-accent {
+        border-top: 10px solid #795548;
+      }
+      
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #fafafa;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #795548, #d4af37);
+        border-radius: 10px;
+        border: 3px solid #fafafa;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5d4037;
+      }
+      
+      ::selection {
+        background: #795548;
+        color: white;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-BqWa1NWE.js"></script>
+</head>
+<body class="text-slate-800">
+    <div id="root"></div>
+</body>
+</html>
