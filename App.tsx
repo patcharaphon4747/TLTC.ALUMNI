@@ -22,7 +22,7 @@ const Header: React.FC<{ setRoute: (r: AppRoute) => void, currentUser: AlumniPro
         </div>
         <div className="hidden sm:block">
           <h1 className="text-xl font-black text-[#795548] leading-none tracking-tighter uppercase italic">THALANG <span className="text-[#d4af37]">TC</span></h1>
-          <p className="text-[8px] text-slate-400 uppercase tracking-[0.2em] font-bold mt-1">Technical College </p>
+          <p className="text-[8px] text-slate-400 uppercase tracking-[0.3em] font-bold mt-1">Technical College </p>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ const App: React.FC = () => {
           currentStatus: 'Active Connection',
           gallery: [],
           role: loginRole || 'STUDENT',
-          bio: 'ยินดีที่ได้รู้จักศิษย์เก่าวิทยาลัยเทคนิคถลางทุกท่านครับ ผมพร้อมเชื่อมต่อความร่วมมือกับทุกคน'
+          bio: 'ยินดีที่ได้รู้จักศิษย์เก่าวิทยาลัยเทคนิคถลางทุกท่านครับ ผมพร้อมเชื่อมต่อความร่วมมือกับทุกคน',
         };
         await firebaseService.saveProfile(newProfile);
         setCurrentUser(newProfile);
@@ -164,27 +164,27 @@ const App: React.FC = () => {
                   </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   {[
-                    { role: 'ADMIN', img: 'https://img.icons8.com/bubbles/200/manager.png', color: 'bg-blue-50' },
-                    { role: 'STAFF', img: 'https://img.icons8.com/bubbles/200/conference-call.png', color: 'bg-indigo-50' },
-                    { role: 'TEACHER', img: 'https://img.icons8.com/bubbles/200/classroom.png', color: 'bg-amber-50' },
-                    { role: 'STUDENT', img: 'https://img.icons8.com/bubbles/200/graduation-cap.png', color: 'bg-rose-50' }
+                    { role: 'ADMIN', img: 'https://img.icons8.com/bubbles/250/manager.png', color: 'bg-blue-50' },
+                    { role: 'STAFF', img: 'https://img.icons8.com/bubbles/250/conference-call.png', color: 'bg-indigo-50' },
+                    { role: 'TEACHER', img: 'https://img.icons8.com/bubbles/250/classroom.png', color: 'bg-amber-50' },
+                    { role: 'STUDENT', img: 'https://img.icons8.com/bubbles/250/graduation-cap.png', color: 'bg-rose-50' }
                   ].map((item) => (
                     <div
                       key={item.role}
                       onClick={() => { setLoginRole(item.role as UserRole); setRoute(AppRoute.LOGIN); }}
-                      className={`gov-card p-14 flex flex-col items-center justify-center cursor-pointer border-2 border-transparent hover:border-[#795548] transition-all duration-700 group relative overflow-hidden shadow-xl ${item.color}/30`}
+                      className={`gov-card p-14 flex flex-col items-center justify-center cursor-pointer border-2 border-transparent hover:border-[#795548] transition-all duration-700 group relative overflow-hidden shadow-xl ${item.color}/40`}
                     >
-                      <div className="w-52 h-52 mb-6 transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-700 relative z-10">
+                      <div className="w-56 h-56 mb-6 transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-700 relative z-10 drop-shadow-2xl">
                         <img src={item.img} alt={item.role} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex items-center space-x-3 relative z-10">
-                        <span className="text-xl font-black text-slate-800 uppercase italic tracking-tighter group-hover:text-[#795548] transition-colors">{item.role} ACCESS</span>
-                        <ArrowRight className="w-5 h-5 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#d4af37]" />
+                        <span className="text-2xl font-black text-slate-800 uppercase italic tracking-tighter group-hover:text-[#795548] transition-colors">{item.role} ACCESS</span>
+                        <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#d4af37] duration-500" />
                       </div>
-                      <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <h4 className="text-6xl font-black italic">{item.role[0]}</h4>
+                      <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700">
+                        <h4 className="text-8xl font-black italic">{item.role[0]}</h4>
                       </div>
                     </div>
                   ))}
@@ -192,7 +192,7 @@ const App: React.FC = () => {
               </div>
 
               <div className="lg:col-span-4 space-y-10">
-                <div className="gov-card p-12 bg-[#795548] text-white shadow-[0_50px_100px_-20px_rgba(121,85,72,0.4)] relative overflow-hidden group">
+                <div className="gov-card p-12 bg-[#795548] text-white shadow-[0_50px_100px_-20px_rgba(121,85,72,0.4)] relative overflow-hidden group border-none">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-1000"></div>
                   <h3 className="text-2xl font-black mb-10 italic uppercase border-b border-white/10 pb-6 flex items-center gap-3">
                     <Sparkles className="text-[#d4af37]" size={24} />
@@ -205,10 +205,10 @@ const App: React.FC = () => {
                     </div>
                     <div className="group/item cursor-pointer">
                       <span className="text-[#d4af37] text-[9px] font-black uppercase tracking-[0.4em] block mb-3 opacity-80">Opportunities</span>
-                      <h4 className="text-xl font-bold leading-tight group-hover/item:text-[#d4af37] transition-all duration-500 italic">เปิดรับสมัครโครงการแลกเปลี่ยนเทคนิคระดับสากล</h4>
+                      <h4 className="text-xl font-bold leading-tight group-hover/item:text-[#d4af37] transition-all duration-500 italic">โอกาสทางอาชีพในกลุ่มบริษัทพันธมิตร Thalang TC</h4>
                     </div>
                     <div className="pt-6">
-                      <button className="text-[10px] font-black uppercase tracking-widest border border-white/20 px-8 py-3 rounded-xl hover:bg-white hover:text-[#795548] transition-all">View All News</button>
+                      <button className="text-[10px] font-black uppercase tracking-widest border border-white/20 px-8 py-3 rounded-xl hover:bg-white hover:text-[#795548] transition-all duration-500">View All News</button>
                     </div>
                   </div>
                 </div>
@@ -250,9 +250,12 @@ const App: React.FC = () => {
             <div className="relative overflow-hidden rounded-[5rem] bg-[#795548] p-16 md:p-28 mb-20 shadow-[0_80px_120px_-30px_rgba(121,85,72,0.4)] border border-white/5">
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
                 <div className="text-center lg:text-left">
-                  <span className="bg-[#d4af37]/20 text-[#d4af37] px-6 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.3em] mb-8 inline-block backdrop-blur-md border border-[#d4af37]/20 shadow-xl">Secure Professional Database</span>
-                  <h2 className="text-7xl font-black text-white mb-8 uppercase tracking-tighter italic leading-[0.85]">STILL GOT THE <br /><span className="text-[#d4af37]">[THALANG TC] SPIRIT</span></h2>
-                  <p className="text-white/60 text-xl font-medium max-w-lg leading-relaxed">ระบบสืบค้นและเชื่อมโยงเครือข่ายศิษย์เก่าอัจฉริยะ สำหรับบุคลากรเทคนิคชั้นสูง</p>
+                  <span className="bg-[#d4af37]/20 text-[#d4af37] px-6 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.3em] mb-8 inline-block backdrop-blur-md border border-[#d4af37]/20 shadow-xl">Professional Database</span>
+                  <h2 className="text-7xl font-black text-white mb-8 uppercase tracking-tighter italic leading-[0.85]">
+                    STILL GOT THE <br />
+                    <span className="text-[#d4af37]">[THALANG TC] SPIRIT</span>
+                  </h2>
+                  <p className="text-white/60 text-xl font-medium max-w-lg leading-relaxed">ระบบสืบค้นเครือข่ายศิษย์เก่าอัจฉริยะ เชื่อมโยงทุกสายงานเทคนิคระดับสูง</p>
                 </div>
                 <div className="space-y-10">
                   <div className="relative group">
@@ -275,7 +278,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
-              {/* Decorative elements */}
               <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
               <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
             </div>
@@ -379,12 +381,6 @@ const App: React.FC = () => {
                         </div>
                       </div>
                     ))}
-                    {(!currentUser.gallery || currentUser.gallery.length === 0) && (
-                      <div className="col-span-full py-32 border-4 border-dashed border-slate-50 rounded-[4rem] text-center">
-                        <img src="https://img.icons8.com/bubbles/200/no-image.png" className="w-40 h-40 mx-auto mb-6 opacity-30 grayscale" alt="No Memories" />
-                        <p className="text-slate-300 font-black uppercase tracking-[0.5em] text-xs italic">No memories shared yet</p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -521,11 +517,6 @@ const App: React.FC = () => {
           <h2 className="text-5xl font-black text-[#795548] italic uppercase tracking-tighter mb-4">THALANG <span className="text-[#d4af37]">TC</span></h2>
           <div className="w-16 h-1 bg-[#d4af37]/30 rounded-full mb-10"></div>
           <p className="text-slate-300 text-[11px] font-black uppercase tracking-[1.2em] mt-2">© 2024 THALANG TECHNICAL COLLEGE</p>
-          <div className="flex space-x-8 mt-16 text-slate-300 text-[10px] font-bold uppercase tracking-widest italic">
-            <a href="#" className="hover:text-[#795548] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#795548] transition-colors">Digital Ethics</a>
-            <a href="#" className="hover:text-[#795548] transition-colors">Contact Registry</a>
-          </div>
         </div>
       </footer>
     </div>
