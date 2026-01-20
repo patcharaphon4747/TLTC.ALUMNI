@@ -1,6 +1,33 @@
 
+export interface Message {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: number;
+  codeSnippet?: string;
+}
+
+export interface CodeAnalysis {
+  bugs: string[];
+  suggestions: string[];
+  explanation: string;
+}
+
+// Added missing AppRoute enum
+export enum AppRoute {
+  HOME = 'HOME',
+  DIRECTORY = 'DIRECTORY',
+  GUIDE = 'GUIDE',
+  LOGIN = 'LOGIN',
+  PROFILE = 'PROFILE',
+  EDIT_PROFILE = 'EDIT_PROFILE',
+  PUBLIC_VIEW = 'PUBLIC_VIEW'
+}
+
+// Added missing UserRole type
 export type UserRole = 'ADMIN' | 'STAFF' | 'TEACHER' | 'STUDENT';
 
+// Added missing ActivityImage interface
 export interface ActivityImage {
   id: string;
   url: string;
@@ -8,6 +35,7 @@ export interface ActivityImage {
   date: string;
 }
 
+// Added missing AlumniProfile interface
 export interface AlumniProfile {
   id: string;
   fullName: string;
@@ -15,27 +43,10 @@ export interface AlumniProfile {
   email: string;
   phone: string;
   currentStatus: string;
+  role: UserRole;
+  profileImageUrl?: string;
   company?: string;
   position?: string;
-  profileImageUrl?: string;
   bio?: string;
-  role: UserRole;
   gallery: ActivityImage[];
 }
-
-export enum AppRoute {
-  HOME = 'HOME',
-  DIRECTORY = 'DIRECTORY',
-  LOGIN = 'LOGIN',
-  PROFILE = 'PROFILE',
-  EDIT_PROFILE = 'EDIT_PROFILE',
-  PUBLIC_VIEW = 'PUBLIC_VIEW',
-  GUIDE = 'GUIDE'
-}
-
-export type DashboardStats = {
-  totalVerified: number;
-  employmentRate: string;
-  activeSessions: number;
-  partners: number;
-};
